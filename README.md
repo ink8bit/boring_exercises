@@ -1,3 +1,6 @@
 # Go hello
 
-A small CLI app example
+This is a simple CLI app. It has a few commands:
+
+* gr - show greeting
+* he - show hello message
