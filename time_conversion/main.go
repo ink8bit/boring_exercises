@@ -14,6 +14,38 @@ import (
 
 var t = "07:05:45PM"
 
+// formatHours returns formatted string of hours
+// Example:
+// "7" -> "07" (AM)
+// "7" -> "19" (PM)
+// "12" -> "00" (AM)
+func formatHours(hours int, isAM bool) string {
+	var hh string
+
+	if (hours == 0 && isAM) || (hours < 10 && isAM) {
+		hh = "0" + strconv.Itoa(hours)
+	} else if hours == 12 && !isAM {
+		hh = strconv.Itoa(hours)
+	} else if hours == 12 && isAM {
+		hours = 0
+		hh = "0" + strconv.Itoa(hours)
+	} else {
+		hours = hours + 12
+		hh = strconv.Itoa(hours)
+	}
+
+	return hh
+}
+
+// formatSeconds removes "PM" or "AM" suffix
+// and returns a string containing only digits
+func formatSeconds(ss string, isAM bool) string {
+	if isAM {
+		return strings.TrimSuffix(ss, "AM")
+	}
+	return strings.TrimSuffix(ss, "PM")
+}
+
 func timeConversion(s string) string {
 	sl := strings.Split(s, ":")
 	hh := sl[0]
@@ -27,26 +59,8 @@ func timeConversion(s string) string {
 		panic(err)
 	}
 
-	if hhInt == 0 && isAM {
-		hh = "0" + strconv.Itoa(hhInt)
-	} else if hhInt < 10 && isAM {
-		hh = "0" + strconv.Itoa(hhInt)
-	} else if hhInt == 12 && !isAM {
-		hhInt = 12
-		hh = strconv.Itoa(hhInt)
-	} else if hhInt == 12 && isAM {
-		hhInt = 0
-		hh = "0" + strconv.Itoa(hhInt)
-	} else {
-		hhInt = hhInt + 12
-		hh = strconv.Itoa(hhInt)
-	}
-
-	if isAM {
-		ss = strings.TrimSuffix(ss, "AM")
-	} else {
-		ss = strings.TrimSuffix(ss, "PM")
-	}
+	hh = formatHours(hhInt, isAM)
+	ss = formatSeconds(ss, isAM)
 
 	str := strings.Join([]string{hh, mm, ss}, ":")
 
