@@ -8,3 +8,4 @@
 
 - [plus minus](plus_minus/main.go)
 - [mini max sum](mini_max_sum/main.go)
+- [time conversion](time_conversion/main.go)
