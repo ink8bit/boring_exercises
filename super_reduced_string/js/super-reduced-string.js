@@ -2,6 +2,7 @@
  * Returns super reduced string.
  * @example input: 'aaabccddd' -> output: 'abd'
  * @param {string} str
+ * @returns {string}
  */
 function superReducedString(str) {
   const empty = 'Empty String';
