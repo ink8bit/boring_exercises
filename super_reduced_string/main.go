@@ -12,6 +12,10 @@ import (
 // "aaabccddd" -> "abd"
 // "" -> "Empty String"
 func superReducedString(s string) string {
+	empty := "Empty String"
+	if len(s) == 0 {
+		return empty
+	}
 	var sl []rune
 	for _, ch := range s {
 		if len(sl) == 0 {
@@ -26,7 +30,7 @@ func superReducedString(s string) string {
 	}
 	res := string(sl)
 	if res == "" {
-		return "Empty String"
+		return empty
 	}
 	return res
 }
