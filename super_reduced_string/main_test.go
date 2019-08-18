@@ -30,12 +30,6 @@ var testCases = []struct {
 		name: "aaabccddd",
 	},
 	{
-		// second try to eliminate flaky case
-		in:   "aaabccddd",
-		out:  "abd",
-		name: "aaabccddd",
-	},
-	{
 		in:   "aa",
 		out:  "Empty String",
 		name: "aa",
