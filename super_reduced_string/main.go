@@ -13,8 +13,10 @@ import (
 // "aaabccddd" -> "abd"
 // "" -> "Empty String"
 func superReducedString(s string) string {
+	empty := "Empty String"
+
 	if len(s) == 0 {
-		return "Empty String"
+		return empty
 	}
 
 	dict := map[string]int{}
@@ -39,7 +41,7 @@ func superReducedString(s string) string {
 	}
 
 	if res == "" {
-		return "Empty String"
+		return empty
 	}
 
 	return res
