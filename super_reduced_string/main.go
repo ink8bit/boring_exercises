@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 // superReducedString function returns "Empty String"
@@ -15,7 +16,7 @@ func superReducedString(s string) string {
 	if len(s) == 0 {
 		return "Empty String"
 	}
-	var res string
+
 	dict := map[string]int{}
 	for _, el := range s {
 		elStr := string(el)
@@ -26,15 +27,25 @@ func superReducedString(s string) string {
 			dict[elStr] = 1
 		}
 	}
-	for k, v := range dict {
-		if v%2 != 0 {
-			res = res + k
+
+	res := ""
+	for _, el := range s {
+		elStr := string(el)
+		if !strings.Contains(res, elStr) && dict[elStr]%2 != 0 {
+			res += elStr
+		} else {
+			continue
 		}
 	}
+
+	if res == "" {
+		return "Empty String"
+	}
+
 	return res
 }
 
 func main() {
-	str := "aabcc"
+	str := "aaabccddd"
 	fmt.Println(superReducedString(str))
 }

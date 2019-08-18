@@ -15,6 +15,11 @@ var testCases = []struct {
 		name: "aabcc",
 	},
 	{
+		in:   "aacc",
+		out:  "Empty String",
+		name: "aacc",
+	},
+	{
 		in:   "",
 		out:  "Empty String",
 		name: "An empty string",
@@ -23,6 +28,27 @@ var testCases = []struct {
 		in:   "aaabccddd",
 		out:  "abd",
 		name: "aaabccddd",
+	},
+	{
+		// second try to eliminate flaky case
+		in:   "aaabccddd",
+		out:  "abd",
+		name: "aaabccddd",
+	},
+	{
+		in:   "aa",
+		out:  "Empty String",
+		name: "aa",
+	},
+	{
+		in:   "baab",
+		out:  "Empty String",
+		name: "baab",
+	},
+	{
+		in:   "aaaaabbccddd",
+		out:  "ad",
+		name: "aaaaabbccddd",
 	},
 }
 
