@@ -11,24 +11,20 @@ function superReducedString(str) {
     return empty;
   }
 
-  const dictionary = new Map();
+  const arr = Array.from(str);
+  const chars = [];
 
-  Array.from(str).forEach(el => {
-    if (dictionary.has(el)) {
-      dictionary.set(el, dictionary.get(el) + 1);
+  arr.forEach(char => {
+    if (chars.length === 0) {
+      chars.push(char);
+    } else if (chars[chars.length - 1] === char) {
+      chars.pop();
     } else {
-      dictionary.set(el, 1);
+      chars.push(char);
     }
   });
 
-  dictionary.forEach((val, key) => {
-    if (val % 2 === 0) {
-      dictionary.delete(key);
-    }
-  });
-
-  const res = [...dictionary.keys()].join('');
-
+  const res = chars.join('');
   if (res.length === 0) {
     return empty;
   }
