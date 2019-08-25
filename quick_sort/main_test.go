@@ -23,11 +23,11 @@ var testCases = []struct {
 	},
 }
 
-func TestQuicksort(t *testing.T) {
+func TestQuickSort(t *testing.T) {
 	for _, tt := range testCases {
 		arr := tt.in
 		want := tt.out
-		got := quicksort(tt.in)
+		got := quickSort(tt.in)
 
 		t.Run("", func(t *testing.T) {
 			t.Parallel()
