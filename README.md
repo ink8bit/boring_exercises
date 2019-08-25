@@ -2,8 +2,8 @@
 
 ## Sorting algorithms
 
-- [quick sort](quick_sort/main.go)
-- [merge sort](merge_sort/main.go)
+- [quick sort](quick_sort/README.md)
+- [merge sort](merge_sort/README.md)
 
 ## List of exercises
 
