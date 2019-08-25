@@ -2,7 +2,7 @@
 
 ## Sorting algorithms
 
-- [quick sort](quicksort/main.go)
+- [quick sort](quick_sort/main.go)
 - [merge sort](merge_sort/main.go)
 
 ## List of exercises

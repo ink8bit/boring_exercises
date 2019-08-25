@@ -4,12 +4,13 @@ import (
 	"fmt"
 )
 
-var arr = []int{4, 10, 3, 9, 5} // 3,4,5,9,10
+var arr = []int{4, 10, 3, 9, 5}
 
-func quicksort(unsorted []int) []int {
+func quickSort(unsorted []int) []int {
 	if len(unsorted) < 2 {
 		return unsorted
 	}
+
 	pivot := unsorted[len(unsorted)-1]
 	var left []int
 	var right []int
@@ -22,8 +23,8 @@ func quicksort(unsorted []int) []int {
 		}
 	}
 
-	sortedLeft := quicksort(left)
-	sortedRight := quicksort(right)
+	sortedLeft := quickSort(left)
+	sortedRight := quickSort(right)
 	sorted := append(sortedLeft, pivot)
 	sorted = append(sorted, sortedRight...)
 
@@ -31,6 +32,7 @@ func quicksort(unsorted []int) []int {
 }
 
 func main() {
-	sorted := quicksort(arr)
-	fmt.Println(sorted)
+	sorted := quickSort(arr)
+	fmt.Println("unsorted:", arr)
+	fmt.Println("sorted:", sorted)
 }
