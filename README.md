@@ -11,6 +11,4 @@
 - [mini max sum](mini_max_sum/main.go)
 - [time conversion](time_conversion/main.go)
 - [camel case](camel_case/main.go)
-- super reduced string
-  - [solution in Go](super_reduced_string/main.go)
-  - [solution in JavaScript](super_reduced_string/js/super-reduced-string.js)
+- [super reduced string](super_reduced_string/main.go)
