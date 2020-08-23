@@ -1,5 +1,11 @@
 # Boring exercises
 
+![Go](https://github.com/ink8bit/boring_exercises/workflows/Go/badge.svg)
+
+> This repo is still work in progress.
+
+A set of solutions to common programming exercises.
+
 ## Sorting algorithms
 
 - [quick sort](quick_sort/README.md)
