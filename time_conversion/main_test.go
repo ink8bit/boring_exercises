@@ -37,9 +37,8 @@ func TestTimeConversion(t *testing.T) {
 		got := timeConversion(tt.in)
 
 		t.Run("", func(t *testing.T) {
-			t.Parallel()
 			if got != want {
-				t.Errorf("❌ str: is %q, got: %q, but wanted: %q", str, got, want)
+				t.Errorf("string %q\ngot %q\nwant %q", str, got, want)
 			}
 		})
 	}
