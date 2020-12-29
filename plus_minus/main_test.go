@@ -23,10 +23,8 @@ func TestPlusMinus(t *testing.T) {
 		got := plusMinus(tt.in)
 
 		t.Run("", func(t *testing.T) {
-			t.Parallel()
-
 			if got != want {
-				t.Errorf("arr is %v and the result is %v, but want %v", arr, got, want)
+				t.Errorf("slice %v\ngot %v\nwant %v", arr, got, want)
 			}
 		})
 	}

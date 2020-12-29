@@ -30,10 +30,8 @@ func TestMergeSort(t *testing.T) {
 		got := mergeSort(tt.in)
 
 		t.Run("", func(t *testing.T) {
-			t.Parallel()
-
 			if !reflect.DeepEqual(got, want) {
-				t.Errorf("❌ arr: is %v, got: %v, but wanted: %v", arr, got, want)
+				t.Errorf("slice: %v\ngot %v\nwant %v", arr, got, want)
 			}
 		})
 	}

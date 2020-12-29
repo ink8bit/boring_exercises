@@ -19,14 +19,12 @@ var testCases = []struct {
 	},
 }
 
-func TestSuperReducedString(t *testing.T) {
+func TestCamelCase(t *testing.T) {
 	for _, tc := range testCases {
 		want := tc.out
-		got := camelcase(tc.in)
+		got := camelCase(tc.in)
 
 		t.Run(tc.name, func(t *testing.T) {
-			t.Parallel()
-
 			if got != want {
 				t.Errorf("got: %v, but want: %v", got, want)
 			}

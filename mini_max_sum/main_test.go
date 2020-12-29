@@ -52,10 +52,9 @@ func TestMiniMaxSum(t *testing.T) {
 		gotMin, gotMax := miniMaxSum(arr)
 
 		t.Run("", func(t *testing.T) {
-			t.Parallel()
 			if gotMin != wantMin || gotMax != wantMax {
 				t.Errorf(
-					"arr: %v, min sum %v, max sum %v,\nbut wanted min sum %v and max sum %v",
+					"slice %v\ngot min sum %v, max sum %v\nwant min sum %v and max sum %v",
 					arr, gotMin, gotMax, wantMin, wantMax,
 				)
 			}
@@ -71,10 +70,9 @@ func TestUMiniMaxSum(t *testing.T) {
 		gotMin, gotMax := uMiniMaxSum(arr)
 
 		t.Run("", func(t *testing.T) {
-			t.Parallel()
 			if gotMin != wantMin || gotMax != wantMax {
 				t.Errorf(
-					"arr: %v, min sum %v, max sum %v,\nbut wanted min sum %v and max sum %v",
+					"slice %v\ngot min sum %v, max sum %v\nwant min sum %v and max sum %v",
 					arr, gotMin, gotMax, wantMin, wantMax,
 				)
 			}

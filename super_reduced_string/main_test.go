@@ -52,10 +52,8 @@ func TestSuperReducedString(t *testing.T) {
 		got := superReducedString(tc.in)
 
 		t.Run(tc.name, func(t *testing.T) {
-			t.Parallel()
-
 			if got != want {
-				t.Errorf("got: %v, but want: %v", got, want)
+				t.Errorf("got %v\nwant %v", got, want)
 			}
 		})
 	}

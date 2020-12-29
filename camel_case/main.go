@@ -7,15 +7,15 @@ import (
 
 func main() {
 	str := "oneTwoThree"
-	fmt.Println(camelcase(str))
+	fmt.Println(camelCase(str))
 }
 
-// camelcase function returns a number of
+// camelCase function returns a number of
 // words in camel-cased string
 //
 // Example:
 // Input: oneTwoThree -> Output: 3
-func camelcase(s string) int32 {
+func camelCase(s string) int32 {
 	if len(s) == 0 {
 		return 0
 	}
